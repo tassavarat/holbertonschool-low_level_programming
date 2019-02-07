@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Generates a number, then if...else if...else statements with relational operators
+ * main - Uses if...else if...else statements with relational operators
  *
  * Return: 0
  */
