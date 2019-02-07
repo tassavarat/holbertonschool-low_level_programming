@@ -6,7 +6,7 @@
  * main - Demonstrates if...else if...else statements
  *
  * Return: 0
-*/
+ */
 int main(void)
 {
 	int n;
