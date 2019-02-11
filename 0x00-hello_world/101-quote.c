@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * main - Prints a string without using printf or puts
+ * main - Prints a string to standard error
  *
  * Return: 1
  */
