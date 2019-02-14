@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main -
+ * main - Prints fibonacci sequence up to 50
  *
- * Return:
+ * Return: 0
  */
 int main(void)
 {
