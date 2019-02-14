@@ -6,7 +6,7 @@
 * Scope of variables
 * The gcc flags -Wall -Werror -pedantic -Wextra
 * Header files and how to to use them with #include
-
+___
 **Files:**
 
 0-isupper.c - Function that checks for uppercase character
