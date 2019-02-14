@@ -11,7 +11,8 @@ int main(void)
 	int count = 0;
 
 	for (i = 0; i < 1024; i++)
-		count += i;
+		if (i % 3 == 0 || i % 5 == 0)
+			count += i;
 	printf("%i\n", count);
 	return (0);
 }
