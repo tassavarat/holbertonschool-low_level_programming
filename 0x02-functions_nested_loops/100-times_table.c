@@ -15,7 +15,9 @@ void print_times_table(int n)
 			for (col  = 0; col <= n; col++)
 			{
 				if (col	== 0)
+				{
 					_putchar('0');
+				}
 				else if (row * col < 10)
 				{
 					_putchar(',');
@@ -44,6 +46,4 @@ void print_times_table(int n)
 			_putchar('\n');
 		}
 	}
-	else
-		_putchar('\n');
 }
