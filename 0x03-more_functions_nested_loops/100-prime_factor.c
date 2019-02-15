@@ -23,8 +23,9 @@ int main(void)
 			maxPrime = oddNum;
 			n /= oddNum;
 		}
-		oddNum += 2;
 	}
+	if (n > 2)
+		maxPrime = n;
 	printf("%i\n", maxPrime);
 	return (0);
 }
