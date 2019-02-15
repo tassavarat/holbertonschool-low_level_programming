@@ -27,10 +27,10 @@ ___
 
 [8-print\_square.c](/0x03-more_functions_nested_loops/8-print_square.c) - Function that prints a square, followed by a new line
 
-[9-fizz\_buzz.c](0x03-more_functions_nested_loops/9-fizz_buzz.c) - Prints the numbers from 1 to 100, followed by a new line. But for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz
+[9-fizz\_buzz.c](/0x03-more_functions_nested_loops/9-fizz_buzz.c) - Prints the numbers from 1 to 100, followed by a new line. But for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz
 
 [10-print\_triangle.c](/0x03-more_functions_nested_loops/10-print_triangle.c) - Function that prints a triangle, followed by a new line
 
 [100-prime_factor.c](/0x03-more_functions_nested_loops/100-prime_factor.c) - Finds and prints the largest prime factor of the number 612852475143, followed by a new line
 
-[101-print_number.c](0x03-more_functions_nested_loops/101-print_number.c) - Function that prints an integer
+[101-print_number.c](/0x03-more_functions_nested_loops/101-print_number.c) - Function that prints an integer
