@@ -9,7 +9,7 @@
 ___
 **Files:**
 
-[0-isupper.c](/0-isupper.c) - Function that checks for uppercase character
+[0-isupper.c](/0x03-more_functions_nested_loops/0-isupper.c) - Function that checks for uppercase character
 
 [1-isdigit.c] - Function that checks for a digit (0 through 9)
 
