@@ -1,3 +1,4 @@
+#include <limits.h>
 #include "holberton.h"
 
 /**
@@ -6,41 +7,24 @@
  */
 void print_number(int n)
 {
-	if (n < -9)
+	int i;
+
+	if (n < 0)
 	{
 		_putchar('-');
-		_putchar((n * -1) / 10 + '0');
-		_putchar((n * -1) % 10 + '0');
 	}
-	else if (n < 0)
+	for (i = 1000000000; i > 0; i /= 10)
 	{
-		_putchar('-');
-		_putchar(n + '0');
-	}
-	else if (n == 0)
-	{
-		_putchar(n + '0');
-	}
-	else if (n < 10)
-	{
-		_putchar(n + '0');
-	}
-	else if (n < 100)
-	{
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	}
-	else if (n < 1000)
-	{
-		_putchar(n / 100 + '0');
-		_putchar(n / 10 % 10 + '0');
-		_putchar(n % 10 + '0');
-	}
-	else
-	{
-		_putchar(n / 1000 + '0');
-		_putchar(n / 100 % 10 + '0');
-		_putchar(n / 10 % 10 + '0');
-		_putchar(n % 10 + '0');
+		if (n / i)
+		{
+			if ((n / i) % 10 < 0)
+				_putchar(-(n / i % 10) + '0');
+			else
+				_putchar((n / i % 10) + '0');
+		}
+		else if (n / i == 0 && i == 1)
+		{
+			_putchar(n / i % 10 + '0');
+		}
 	}
 }
