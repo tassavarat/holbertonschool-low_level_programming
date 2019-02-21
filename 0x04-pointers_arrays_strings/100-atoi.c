@@ -12,7 +12,7 @@ int _atoi(char *s)
 	int i = 0;
 	int neg = 0;
 	int num = 0;
-	int conv = 0;
+	unsigned int conv = 0;
 
 	while (s[i])
 	{
