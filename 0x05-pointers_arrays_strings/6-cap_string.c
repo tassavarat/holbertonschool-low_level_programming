@@ -20,7 +20,8 @@ char *cap_string(char *s)
 		{
 			start = 1;
 		}
-		else if (s[i] >= 'A' && s[i] <= 'Z')
+		else if ((s[i] >= 'A' && s[i] <= 'Z') ||
+				(s[i] >= '0' && s[i] <= '9'))
 		{
 			start = 0;
 		}
