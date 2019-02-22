@@ -1,6 +1,6 @@
 **Files:**
 
-[0-strcat.c](/0x05-pointers_arrays_strings) - Function that concatenates two strings
+[0-strcat.c](/0x05-pointers_arrays_strings/0-strcat.c) - Function that concatenates two strings
 
 [1-strncat.c]() - Function that concatenates two strings
 
