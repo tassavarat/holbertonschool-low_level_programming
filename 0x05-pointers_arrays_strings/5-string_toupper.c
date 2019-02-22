@@ -10,8 +10,7 @@ char *string_toupper(char *s)
 {
 	int i;
 
-	for (i = 0; s[i] == ' ' || (s[i] >= 'A' && s[i] <= 'Z')
-			|| (s[i] >= 'a' && s[i] <= 'z'); i++)
+	for (i = 0; s[i]; i++)
 		if (s[i] >= 'a' && s[i] <= 'z')
 			s[i] -= ' ';
 	return (s);
