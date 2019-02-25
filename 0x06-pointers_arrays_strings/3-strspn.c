@@ -5,7 +5,7 @@
  * @s: String being evaluated
  * @accept: Bytes being compared
  *
- * Return: Number of bytes 
+ * Return: Number of bytes
  */
 unsigned int _strspn(char *s, char *accept)
 {
