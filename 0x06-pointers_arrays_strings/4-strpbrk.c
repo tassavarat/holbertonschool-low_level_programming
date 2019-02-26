@@ -5,7 +5,7 @@
  * @s: String being evaluated
  * @accept: Bytes being searched for
  *
- * Return: Pointer to the byte in s
+ * Return: Pointer to the byte in s or NULL
  */
 char *_strpbrk(char *s, char *accept)
 {
