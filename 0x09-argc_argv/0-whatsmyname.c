@@ -2,10 +2,10 @@
 
 /**
  * main - Prints its name, followed by a new line
- * @argc:
- * @argv
+ * @argc: Number of command line arguments
+ * @argv: Array containing command line arguments
  *
- * Return:
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
