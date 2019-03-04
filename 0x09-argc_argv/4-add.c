@@ -12,18 +12,20 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
-	char *endptr;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; ++i)
 		{
-			sum += strtol(argv[i], &endptr, 10);
-		}
-		if (*endptr)
-		{
-			printf("Error\n");
-			return (1);
+			if (argv[i])
+			{
+				sum += atoi(argv[i]);
+			}
+			if (!sum)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		printf("%d\n", sum);
 	}
