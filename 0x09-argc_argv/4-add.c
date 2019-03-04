@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		{
 			sum += strtol(argv[i], &endptr, 10);
 			if ((*endptr >= 'A' && *endptr <= 'Z')
-				       	|| (*endptr >= 'a' && *endptr <= 'z'))
+				|| (*endptr >= 'a' && *endptr <= 'z'))
 			{
 				printf("Error\n");
 				return (1);
