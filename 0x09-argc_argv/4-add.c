@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
+	int letter_check;
 
 	if (argc > 1)
 	{
@@ -19,12 +20,16 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i])
 			{
-				sum += atoi(argv[i]);
-			}
-			if (!sum)
-			{
-				printf("Error\n");
-				return (1);
+				letter_check = atoi(argv[i]);
+				if (!letter_check)
+				{
+					sum += letter_check;
+				}
+				else
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
 		}
 		printf("%d\n", sum);
