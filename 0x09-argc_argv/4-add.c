@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 			if (argv[i])
 			{
 				letter_check = atoi(argv[i]);
-				if (!letter_check)
+				if (letter_check)
 				{
 					sum += letter_check;
 				}
