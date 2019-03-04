@@ -19,7 +19,8 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; ++i)
 		{
 			sum += strtol(argv[i], &endptr, 10);
-			if ((*endptr >= 'A' && *endptr <= 'Z') || (*endptr >= 'a' && *endptr <= 'z'))
+			if ((*endptr >= 'A' && *endptr <= 'Z')
+				       	|| (*endptr >= 'a' && *endptr <= 'z'))
 			{
 				printf("Error\n");
 				return (1);
