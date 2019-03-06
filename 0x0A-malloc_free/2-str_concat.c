@@ -25,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 	while (*(s2 + i))
 		++i;
 	len += i;
-	str = malloc(sizeof(char) * (len));
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	for (i = 0; *s1; ++i)
