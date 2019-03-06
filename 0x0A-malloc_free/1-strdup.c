@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _strdup - Returns pointer to newly allocated space which contains a string
@@ -14,12 +13,12 @@ char *_strdup(char *str)
 	int i = 0;
 	int len;
 
+	if (!str)
+		return (NULL);
 	while (*(str + i))
 		++i;
 	len = i;
-	if (!str)
-		return (NULL);
-	s = malloc(sizeof(char) * len + 1);
+	s = malloc(sizeof(char) * (len + 1));
 	if (!s)
 		return (NULL);
 	for (i = 0; i <= len; ++i)
