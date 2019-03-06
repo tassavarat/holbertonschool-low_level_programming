@@ -3,20 +3,6 @@
 #include <stdio.h>
 
 /**
- * _strlen - Returns the length of a string
- * @s: Variable being evaluated
- *
- * Return: Length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s++)
-		i++;
-	return (i);
-}
-/**
  * _strdup - Returns pointer to newly allocated space which contains a string
  * @str: String to be copied
  *
