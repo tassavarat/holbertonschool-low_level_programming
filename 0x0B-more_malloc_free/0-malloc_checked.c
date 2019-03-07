@@ -1,11 +1,10 @@
 #include "holberton.h"
-#include <stdlib.h>
 
 /**
  * malloc_checked - Allocates memory using malloc
  * @b: Amount of memory being allocated
  *
- * Return: Pointer to allocated memory, 98 if malloc fails
+ * Return: Pointer to allocated memory
  */
 void *malloc_checked(unsigned int b)
 {
