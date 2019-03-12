@@ -27,8 +27,10 @@ int _strlen(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	int name_len, owner_len, i;
+	unsigned int name_len, owner_len, i;
 
+	if (!name || !owner)
+		return (NULL);
 	d = malloc(sizeof(struct dog));
 	if (!d)
 		return (NULL);
