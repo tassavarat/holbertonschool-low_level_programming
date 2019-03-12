@@ -2,18 +2,28 @@
 #include <stdlib.h>
 
 /**
- * _strlen - Finds length of string
- * @s: String being evaluated
+ * _strdup - Returns pointer to newly allocated space which contains a string
+ * @str: String to be copied
  *
- * Return: Length of string
+ * Return: Pointer to new string identical to str, NULL if str = NULL
  */
-int _strlen(char *s)
+char *_strdup(char *str)
 {
+	char *s;
 	int i = 0;
+	int len;
 
-	while (*(s + i))
+	if (!str)
+		return (NULL);
+	while (*(str + i))
 		++i;
-	return (i);
+	len = i;
+	s = malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
+	for (i = 0; i <= len; ++i)
+		*(s + i) = *(str + i);
+	return (s);
 }
 /**
  * new_dog - Creates a new dog
@@ -26,32 +36,25 @@ int _strlen(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	unsigned int name_len, owner_len, i;
 
 	if (!name || !owner)
 		return (NULL);
 	d = malloc(sizeof(dog_t));
 	if (!d)
 		return (NULL);
-	name_len = _strlen(name);
-	d->name = malloc(sizeof(char) * (name_len + 1));
+	d->name = _strdup(name);
 	if (!(d->name))
 	{
 		free(d);
 		return (NULL);
 	}
-	for (i = 0; i <= name_len; ++i)
-		d->name[i] = name[i];
 	d->age = age;
-	owner_len = _strlen(owner);
-	d->owner = malloc(sizeof(char) * (owner_len + 1));
+	d->owner = _strdup(owner);
 	if (!(d->owner))
 	{
 		free(d->name);
 		free(d);
 		return (NULL);
 	}
-	for (i = 0; i <= owner_len; ++i)
-		d->owner[i] = owner[i];
 	return (d);
 }
