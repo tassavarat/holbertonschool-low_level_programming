@@ -11,12 +11,12 @@ int main(int argc, char **argv)
 {
 	int byte, i;
 
-	byte = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+	byte = atoi(argv[1]);
 	if (byte < 0)
 	{
 		printf("Error\n");
