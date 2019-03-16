@@ -58,7 +58,6 @@ void print_all(const char * const format, ...)
 	};
 	va_list ap;
 	char *separator = "";
-	char *new_line = "";
 	int i = 0;
 	int j = 0;
 
@@ -75,10 +74,9 @@ void print_all(const char * const format, ...)
 			}
 			++j;
 		}
-		new_line = "\n";
 		j = 0;
 		++i;
 	}
-	printf("%s", new_line);
+	printf("\n");
 	va_end(ap);
 }
