@@ -6,8 +6,8 @@
 #include <stdarg.h>
 
 /**
- * struct op - Struct op
- * @op: The operator
+ * struct print - print
+ * @type: The operator
  * @f: The function associated
  */
 typedef struct print
