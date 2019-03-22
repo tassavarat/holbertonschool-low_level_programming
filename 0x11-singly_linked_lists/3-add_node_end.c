@@ -36,16 +36,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->next = NULL;
 	if (!*head)
 	{
-		printf("0\n");
 		*head = new;
 		return (*head);
 	}
 	while (old->next)
-	{
 		old = old->next;
-		printf("1\n");
-	}
-	printf("2\n");
 	old->next = new;
 	return (new);
 }
