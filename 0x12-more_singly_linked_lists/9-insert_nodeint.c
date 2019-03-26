@@ -19,6 +19,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	while (*head && idx)
 	{
+		if (!tmp)
+		{
+			printf("DADDY\n");
+			return (NULL);
+		}
 		if (i == idx - 1)
 			break;
 		tmp = tmp->next;
