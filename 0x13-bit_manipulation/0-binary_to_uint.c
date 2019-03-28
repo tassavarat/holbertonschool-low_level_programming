@@ -7,7 +7,7 @@
  * Return: Length of string
  * 0 if any char is not 0 or 1
  */
-unsigned int _strlen_b (const char *s)
+unsigned int _strlen_b(const char *s)
 {
 	int i = 0;
 
@@ -19,6 +19,7 @@ unsigned int _strlen_b (const char *s)
 	}
 	return (i);
 }
+
 /**
  * binary_to_uint - Converts a binary number to an unsigned int
  * @b: Pointer to a string of 0 and 1 chars
