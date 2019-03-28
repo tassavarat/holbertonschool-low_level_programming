@@ -30,18 +30,15 @@ unsigned int _strlen_b(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int l;
+	unsigned int l, pow;
 	unsigned int n = 0;
-	unsigned int base_val = 1;
 
 	if (b)
 		l = _strlen_b(b);
-	while (l)
+	for (pow = 0; l; --l, ++pow)
 	{
 		if (*(b + l - 1) == '1')
-			n += base_val;
-		base_val *= 2;
-		--l;
+			n += 1 << pow;
 	}
 	return (n);
 }
