@@ -6,13 +6,13 @@
  * @index: Index, starting from 0 of the bit we want
  *
  * Return: 1 on success
- * 0 on error
+ * -1 on error
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > 63)
 		return (-1);
-	else
+	if
 	{
 		*n = *n | 1 << index;
 		return (1);
