@@ -20,14 +20,9 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	f2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (f2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	f2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	while ((n = read(f1, buf, 1024)) > 0)
-		if ((write(f2, buf, n)) != n)
+		if ((write(f2, buf, n)) != n || f2 < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
