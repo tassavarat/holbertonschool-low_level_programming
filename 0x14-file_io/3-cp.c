@@ -34,12 +34,12 @@ int main(int argc, char *argv[])
 	if (close(f1) > 0)
 	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", f1);
-		exit (100);
+		exit(100);
 	}
 	if (close(f2) > 0)
 	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", f2);
-		exit (100);
+		exit(100);
 	}
 	return (0);
 }
