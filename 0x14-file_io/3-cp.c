@@ -23,11 +23,15 @@ int main(int argc, char *argv[])
 	f2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (f2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((n = read(f1, buf, 1024)) > 0)
-		write(f2, buf, n);
+		if ((write(f2, buf, n)) != n)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	if (n == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
