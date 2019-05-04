@@ -2,7 +2,7 @@
 
 /**
  * dlistint_len - Returns number of elements in linked list
- * @h Pointer to first node of linked list
+ * @h: Pointer to first node of linked list
  *
  * Return: Number of elements in linked list
  */
