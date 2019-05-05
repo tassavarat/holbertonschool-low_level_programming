@@ -1,6 +1,27 @@
 #include "lists.h"
 
 /**
+ * dlistint_len - Returns number of elements in linked list
+ * @h: Pointer to first node of linked list
+ *
+ * Return: Number of elements in linked list
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	const dlistint_t *current;
+	size_t n;
+
+	current = h;
+	n = 0;
+	while (current)
+	{
+		current = current->next;
+		++n;
+	}
+	return (n);
+}
+
+/**
  * insert_dnodeint_at_index - Inserts a new node at a given position
  * @h: Pointer to pointer of first node
  * @idx: Index of the list where the new node should be added
@@ -15,10 +36,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	current = *h;
 	i = 1;
-	new = malloc(sizeof(dlistint_t));
-	if (!new)
+	if (idx > dlistint_len(*h))
 		return (NULL);
-
 	while (i < idx)
 	{
 		if (!current)
@@ -26,6 +45,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		++i;
 		current = current->next;
 	}
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+
 	if (idx)
 	{
 		new->prev = current;
