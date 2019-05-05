@@ -1,6 +1,27 @@
 #include "lists.h"
 
 /**
+ * dlistint_len - Returns number of elements in linked list
+ * @h: Pointer to first node of linked list
+ *
+ * Return: Number of elements in linked list
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	const dlistint_t *current;
+	size_t n;
+
+	current = h;
+	n = 0;
+	while (current)
+	{
+		current = current->next;
+		++n;
+	}
+	return (n);
+}
+
+/**
  * delete_dnodeint_at_index - Deletes the node at index
  * @head: Pointer to a pointer of first node
  * @index: Index of node that should be deleted starting at 0
@@ -9,33 +30,38 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *current;
+	dlistint_t *current, *tmp;
 	unsigned int i;
 
-	if (!*head)
+	if (!*head || index > dlistint_len(*head))
 		return (-1);
+	tmp = *head;
 	current = *head;
 	i = 1;
 
 	while (i < index)
 	{
-		if (!current)
+		if (!tmp)
 			return (-1);
 		++i;
-		current = current->next;
+		tmp = tmp->next;
 	}
 	if (index)
 	{
-		current->next = current->next->next;
-		current = current->next->next;
-		current->prev = current->prev->prev;
-		current = current->prev;
+		current = tmp->next;
+		tmp->next = current->next;
+		if (tmp->next)
+		{
+			tmp = tmp->next;
+			tmp->prev = current->prev;
+		}
 	}
 	else
 	{
 		*head = (*head)->next;
 		if (*head)
 			(*head)->prev = NULL;
+
 	}
 	free(current);
 	return (1);
