@@ -67,5 +67,6 @@ What you should learn from this project:
 
 ---
 
-## Author
+## Authors
 * **Tim Assavarat** - [tassavarat](https://github.com/tassavarat)
+* **John Cook** - [JohnCook17](https://github.com/JohnCook17)
