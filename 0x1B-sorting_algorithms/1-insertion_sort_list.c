@@ -1,6 +1,6 @@
 #include "sort.h"
 
-/*
+/**
  * insertion_sort_list - Insertion sort algorithm
  * @list: Linked list to sort
  */
