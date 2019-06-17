@@ -25,9 +25,9 @@ void selection_sort(int *array, size_t size)
 	size_t si, i;
 	int min, min_pos, min_update;
 
+	min_update = 0;
 	if (array)
 	{
-		min_update = 0;
 		min = array[0];
 		for (si = 0; si < size; ++si, min = array[si], min_update = 0)
 		{
