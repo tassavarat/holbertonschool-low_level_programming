@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * 
+ * Hi Tim 
  */
 void swap(int *array, size_t size, int *i, int *j)
 {
