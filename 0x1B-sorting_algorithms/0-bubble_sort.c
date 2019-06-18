@@ -12,9 +12,12 @@ void swapp(int *array, size_t size, int i, int j)
 	int tmp;
 
 	tmp = array[j];
-	array[j] = array[i];
-	array[i] = tmp;
-	print_array(array, size);
+	if (array[i] != array[j])
+	{
+		array[j] = array[i];
+		array[i] = tmp;
+		print_array(array, size);
+	}
 }
 
 /**

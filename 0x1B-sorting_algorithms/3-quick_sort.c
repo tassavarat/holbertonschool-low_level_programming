@@ -12,9 +12,12 @@ void swapp(int *array, size_t size, int i, int j)
 	int tmp;
 
 	tmp = array[j];
-	array[j] = array[i];
-	array[i] = tmp;
-	print_array(array, size);
+	if (array[i] != array[j])
+	{
+		array[j] = array[i];
+		array[i] = tmp;
+		print_array(array, size);
+	}
 }
 
 /**
@@ -36,12 +39,10 @@ int partition(int *array, size_t size, int lo, int hi)
 		if (array[j] < pivot)
 		{
 			++i;
-			if (i != j)
-				swapp(array, size, i, j);
+			swapp(array, size, i, j);
 		}
 	++i;
-	if (array[i] != array[hi])
-		swapp(array, size, i, hi);
+	swapp(array, size, i, hi);
 	return (i);
 }
 
