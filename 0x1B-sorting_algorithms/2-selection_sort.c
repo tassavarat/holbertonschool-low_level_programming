@@ -8,10 +8,13 @@
  * @j: Second index to swap
  * @val: Value to save
  */
-void swapp(int *array, size_t size, size_t i, int j, int val)
+void swapp(int *array, size_t size, int i, int j)
 {
+	int tmp;
+
+	tmp = array[j];
 	array[j] = array[i];
-	array[i] = val;
+	array[i] = tmp;
 	print_array(array, size);
 }
 
@@ -39,7 +42,7 @@ void selection_sort(int *array, size_t size)
 					min_update = 1;
 				}
 			if (min_update)
-				swapp(array, size, si, min_pos, min);
+				swapp(array, size, si, min_pos);
 		}
 	}
 }
