@@ -6,7 +6,6 @@
  * @size: Size of array
  * @i: First index to swap
  * @j: Second index to swap
- * @val: Value to save
  */
 void swapp(int *array, size_t size, int i, int j)
 {
