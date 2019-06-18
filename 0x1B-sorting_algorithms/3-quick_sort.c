@@ -1,65 +1,74 @@
 #include "sort.h"
 
 /**
- * Hi Tim 
+ * swapp - Swaps specified array elements then prints array
+ * @array: Array to swap elements
+ * @size: Size of array
+ * @i: First index to swap
+ * @j: Second index to swap
+ * @val: Value to save
  */
-void swap(int *array, size_t size, int *i, int *j)
+void swapp(int *array, size_t size, int i, int j, int val)
 {
-    int temp;
-
-    temp = *j;
-	*j = *i;
-    *i = temp;
-    if (*i != *j)
-    {
-        print_array(array, size);
-    }
-	
+	array[j] = array[i];
+	array[i] = val;
+	print_array(array, size);
 }
+
 /**
- * 
+ * partition - Partitions array based on pivot
+ * @array: Array to sort
+ * @size: Size of array
+ * @lo: Start index
+ * @hi: End index
+ *
+ * Return: Position of partition
  */
 int partition(int *array, size_t size, int lo, int hi)
 {
-    int i = lo -1, pivot = array[hi];
-    int j;
+	int pivot, i, j;
 
-    for (j = lo; j <= hi - 1; j++)
-    {
-        if (array[j] <= pivot)
-        {
-            i++;
-            swap(array, size, &array[i], &array[j]);
-        }
-    }
-    /**Do I imcrement i by 1 here?
-     * if I do not then hi works as expected,
-     * if I do then pivot works
-     * how to get both?
-     */
-    swap(array, size, &array[i + 1], &array[hi]);
-    return (i + 1);
+	pivot = array[hi];
+	i = lo - 1;
+	for (j = lo; j < hi; ++j)
+		if (array[j] < pivot)
+		{
+			++i;
+			if (i != j)
+				swapp(array, size, i, j, array[j]);
+		}
+	++i;
+	if (array[i] != array[hi])
+		swapp(array, size, i, hi, array[hi]);
+	return (i);
 }
+
 /**
- * 
+ * quicksort - Recursion funtion
+ * @array: Array to sway elements
+ * @size: Size of array
+ * @lo: Start index
+ * @hi: End index
  */
-void sort(int *array, int lo, int hi, size_t size)
+void quicksort(int *array, size_t size, int lo, int hi)
 {
-    int p;
-    if (lo < hi)
-    {
+	int p;
 
-        p = partition(array, size, lo, hi);
-        sort(array, lo, p - 1, size);
-        sort(array, p + 1, hi, size);
-        
-    }
+	if  (lo < hi)
+	{
+		p = partition(array, size, lo, hi);
+		quicksort(array, size, lo, p - 1);
+		quicksort(array, size, p + 1, hi);
+	}
 }
+
 /**
- * 
+ * quick_sort - Quick sort algorithm
+ * @array: Array to swap elements
+ * @size: Size of array
  */
 void quick_sort(int *array, size_t size)
 {
-
-    sort(array, 0, size - 1, size);
+	if (array)
+		quicksort(array, size, 0, size - 1);
 }
