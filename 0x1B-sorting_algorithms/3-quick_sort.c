@@ -8,11 +8,12 @@
  * @j: Second index to swap
  * @val: Value to save
  */
-void swapp(int *array, size_t size, size_t i, int j, int val)
+void swapp(int *array, size_t size, int i, int j, int val)
 {
 	array[j] = array[i];
 	array[i] = val;
-	print_array(array, size);
+	if (i != j)
+		print_array(array, size);
 }
 
 /**
@@ -31,17 +32,13 @@ int partition(int *array, size_t size, int lo, int hi)
 	pivot = array[hi];
 	i = lo - 1;
 	for (j = lo; j < hi; ++j)
-	{
 		if (array[j] < pivot)
 		{
 			++i;
-			if (i != j)
-				swapp(array, size, i, j, array[j]);
+			swapp(array, size, i, j, array[j]);
 		}
-	}
 	++i;
-	if (array[i] != array[hi])
-		swapp(array, size, i, hi, array[hi]);
+	swapp(array, size, i, hi, array[hi]);
 	return (i);
 }
 
