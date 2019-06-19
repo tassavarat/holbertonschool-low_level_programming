@@ -21,6 +21,14 @@ void swapp_list(listint_t **list, listint_t *n1, listint_t *n2)
 	print_list(*list);
 }
 
+/**
+ * scan_list - Scans list in specified direction and calls swapp_list
+ * @list: Linked list to scan
+ * @current: Current node
+ * @mode: Scans forward if 1, backwards if 0
+ *
+ * Return: 1 on swap being performed, otherwise 0
+ */
 int scan_list(listint_t **list, listint_t **current, int mode)
 {
 	int swp;
@@ -59,11 +67,13 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *current;
 	int swp;
 
+	swp = 1;
 	if (list)
 	{
 		current = *list;
-		for (swp = 1; swp; swp = 0)
+		while (swp)
 		{
+			swp = 0;
 			swp = scan_list(*&list, &current, 1);
 			if (!swp)
 				break;
