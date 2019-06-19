@@ -1,5 +1,13 @@
 #include "sort.h"
 
+int list_len(listint_t *list)
+{
+	int len;
+
+	for (len = 0; list; ++len)
+		list = list->next;
+	return (len);
+}
 /**
  * swapp_list - Swaps linked list nodes then prints list
  * @list: Linked list to swap
@@ -24,18 +32,19 @@ void swapp_list(listint_t **list, listint_t *n1, listint_t *n2)
 /**
  * scan_list - Scans list in specified direction and calls swapp_list
  * @list: Linked list to scan
+ * @len: Length of list
  * @current: Current node
  * @mode: Scans forward if 1, backwards if 0
  *
  * Return: 1 on swap being performed, otherwise 0
  */
-int scan_list(listint_t **list, listint_t **current, int mode)
+int scan_list(listint_t **list, int len, listint_t **current, int mode)
 {
-	int swp;
+	int swp, i;
 
 	swp = 0;
 	if (mode)
-		while ((*current)->next)
+		for (i = 0; i < len && (*current)->next; ++i)
 		{
 			if ((*current)->n > (*current)->next->n)
 			{
@@ -46,7 +55,7 @@ int scan_list(listint_t **list, listint_t **current, int mode)
 				(*current) = (*current)->next;
 		}
 	else
-		while ((*current)->prev)
+		for (i = 0; i < len && (*current)->prev; ++i)
 		{
 			if ((*current)->n < (*current)->prev->n)
 			{
@@ -65,19 +74,19 @@ int scan_list(listint_t **list, listint_t **current, int mode)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *current;
-	int swp;
+	int swp, len;
 
 	swp = 1;
 	if (list)
 	{
 		current = *list;
-		while (swp)
+		for (len = list_len(*list); swp; len -= 2)
 		{
 			swp = 0;
-			swp = scan_list(*&list, &current, 1);
+			swp = scan_list(*&list, len, &current, 1);
 			if (!swp)
 				break;
-			swp = scan_list(*&list, &current, 0);
+			swp = scan_list(*&list, len, &current, 0);
 		}
 	}
 }
