@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+ * list_len - Finds length of linked list
+ * @list: List to evaluate
+ *
+ * Return: Length of list
+ */
 int list_len(listint_t *list)
 {
 	int len;
