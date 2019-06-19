@@ -7,7 +7,8 @@
  * @tmp: Node before current
  * @cur_tmp: Node after current
  */
-void swapp_list(listint_t **list, listint_t *current, listint_t *tmp, listint_t *cur_tmp)
+void swapp_list(listint_t **list, listint_t *current, listint_t *tmp,
+		listint_t *cur_tmp)
 {
 	while (tmp && current->n < tmp->n)
 	{
