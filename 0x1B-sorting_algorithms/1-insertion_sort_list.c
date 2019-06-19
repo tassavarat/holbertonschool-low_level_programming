@@ -30,13 +30,11 @@ void insertion_sort_list(listint_t **list)
 
 	if (list)
 	{
-		current = (*list)->next;
-		while (current)
+		for (current = (*list)->next; current; current = current->next)
 		{
 			tmp = current;
 			while (tmp->prev && current->n < tmp->prev->n)
 				swapp_list(*&list, tmp->prev, tmp);
-			current = current->next;
 		}
 	}
 }
