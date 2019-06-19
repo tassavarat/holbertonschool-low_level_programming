@@ -6,7 +6,7 @@
  * @n1: First node
  * @n2: Second node
  */
-void swapp_list (listint_t **list, listint_t *n1, listint_t *n2)
+void swapp_list(listint_t **list, listint_t *n1, listint_t *n2)
 {
 	if (n1->prev)
 		n1->prev->next = n2;
