@@ -29,7 +29,7 @@ void counting_sort(int *array, size_t size)
 	int *sorted = malloc(sizeof(int) * size);
 	int *count = calloc(max = range(array) + 1, sizeof(int));
 
-	if (array)
+	if (array && size > 1)
 	{
 		for (i = 0; array[i]; ++i)
 			++count[array[i]];
