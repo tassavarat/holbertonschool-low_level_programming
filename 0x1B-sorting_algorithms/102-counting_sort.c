@@ -26,11 +26,12 @@ int range(int *array)
 void counting_sort(int *array, size_t size)
 {
 	size_t i, max;
-	int *sorted = malloc(sizeof(int) * size);
-	int *count = calloc(max = range(array) + 1, sizeof(int));
-
+	int *sorted;
+	int *count;
 	if (array && size > 1)
 	{
+		sorted  = malloc(sizeof(int) * size);
+		count = calloc(max = range(array) + 1, sizeof(int));
 		for (i = 0; array[i]; ++i)
 			++count[array[i]];
 		for (i = 1; i < max; ++i)
@@ -43,7 +44,7 @@ void counting_sort(int *array, size_t size)
 		}
 		for (i = 0; array[i]; ++i)
 			array[i] = sorted[i];
-		free(count);
 		free(sorted);
+		free(count);
 	}
 }
