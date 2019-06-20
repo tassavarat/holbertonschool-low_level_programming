@@ -52,11 +52,11 @@ void heap_sort(int *array, size_t size)
 	int i;
 	int n = size;
 
-	for (int i = n / 2 - 1; i >= 0; i--)
+	for (i = n / 2 - 1; i >= 0; i--)
 	{
 		heapify(array, size, n, i);
 	}
-	for (int i = n - 1; i >= 0; i--)
+	for (i = n - 1; i >= 0; i--)
 	{
 		swap(array, size, 0, i);
 		heapify(array, size, i, 0);
