@@ -50,10 +50,11 @@ void heapify(int arr[], int size, int n, int i)
 void heap_sort(int *array, size_t size)
 {
 	int i;
-	int n = size;
+	int n;
 
 	if (array)
 	{
+		n = size;
 		for (i = n / 2 - 1; i >= 0; i--)
 		{
 			heapify(array, size, n, i);
