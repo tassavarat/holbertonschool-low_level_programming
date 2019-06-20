@@ -29,16 +29,21 @@ void counting_sort(int *array, size_t size)
 	int *sorted = malloc(sizeof(int) * size);
 	int *count = calloc(max = range(array) + 1, sizeof(int));
 
-	for (i = 0; array[i]; ++i)
-		++count[array[i]];
-	for (i = 1; i < max; ++i)
-		count[i] += count[i - 1];
-	print_array(count, max);
-	for (i = 0; array[i]; ++i)
+	if (array)
 	{
-		sorted[count[array[i]] - 1] = array[i];
-		--count[array[i]];
+		for (i = 0; array[i]; ++i)
+			++count[array[i]];
+		for (i = 1; i < max; ++i)
+			count[i] += count[i - 1];
+		print_array(count, max);
+		for (i = 0; array[i]; ++i)
+		{
+			sorted[count[array[i]] - 1] = array[i];
+			--count[array[i]];
+		}
+		for (i = 0; array[i]; ++i)
+			array[i] = sorted[i];
+		free(count);
+		free(sorted);
 	}
-	for (i = 0; array[i]; ++i)
-		array[i] = sorted[i];
 }
