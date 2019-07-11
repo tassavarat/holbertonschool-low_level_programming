@@ -23,7 +23,7 @@ Requirements:
 * variables: none
 julien@ubuntu:~/0x1C. Makefiles$ make -f 0-Makefile 
 gcc main.c holberton.c -o holberton
-```C
+```
 julien@ubuntu:~/0x1C. Makefiles$ ./holberton 
 j#0000000000000000000000000000000000000
 j#000000000000000000@Q**g00000000000000
@@ -62,7 +62,7 @@ Requirements:
 * variables: `CC`, `SRC`
 	* `CC`: the compiler to be used
 	* `SRC`: the `.c` files
-```C
+```
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
 gcc main.c holberton.c -o holberton
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
@@ -118,7 +118,7 @@ Requirements:
 * The `all` rule should recompile only the updated source files
 * The `clean`, `oclean`, `fclean`, `re` rules should never fail
 * You are not allowed to have a list of all the `.o` files
-```C
+```
 julien@ubuntu:~/holberton/curriculum_by_julien/holbertonschool-low_level_programming/0x1C. Makefiles$ ls -1
 0-Makefile
 1-Makefile
@@ -188,7 +188,7 @@ Requirements:
 * The `clean`, `oclean`, `fclean`, `re` rules should never fail
 
 * You are not allowed to have a list of all the `.o` files
-```C
+```
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 4-Makefile
 gcc -Wall -Werror -Wextra -pedantic   -c -o main.o main.c
 gcc -Wall -Werror -Wextra -pedantic   -c -o holberton.o holberton.c
@@ -216,7 +216,7 @@ Requirements:
 * First line contains `#!/usr/bin/python3`
 * You are not allowed to import any module
 * Module and function must be documented
-```C
+```Python
 guillaume@ubuntu:~/0x1C$ cat 5-main.py
 #!/usr/bin/python3
 """
