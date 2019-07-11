@@ -216,7 +216,7 @@ Requirements:
 * First line contains `#!/usr/bin/python3`
 * You are not allowed to import any module
 * Module and function must be documented
-```Python
+```
 guillaume@ubuntu:~/0x1C$ cat 5-main.py
 #!/usr/bin/python3
 """
