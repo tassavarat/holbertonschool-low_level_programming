@@ -23,7 +23,7 @@ Requirements:
 * variables: none
 julien@ubuntu:~/0x1C. Makefiles$ make -f 0-Makefile 
 gcc main.c holberton.c -o holberton
-`
+```C
 julien@ubuntu:~/0x1C. Makefiles$ ./holberton 
 j#0000000000000000000000000000000000000
 j#000000000000000000@Q**g00000000000000
@@ -51,7 +51,7 @@ j#0000000000000k?qwgdC=]4#0000000000000
 j#00000000000000w]+]++qw#00000000000000
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 julien@ubuntu:~/0x1C. Makefiles$ 
-`
+```
 
 ### [1. make -f 1-Makefile](./1-Makefile)
 Requirements:
@@ -62,13 +62,13 @@ Requirements:
 * variables: `CC`, `SRC`
 	* `CC`: the compiler to be used
 	* `SRC`: the `.c` files
-`
+```C
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
 gcc main.c holberton.c -o holberton
 julien@ubuntu:~/0x1C. Makefiles$ make -f 1-Makefile
 gcc main.c holberton.c -o holberton
 julien@ubuntu:~/0x1C. Makefiles$
-`
+```
 
 ### [2. make -f 2-Makefile](./2-Makefile)
 Create your first useful Makefile.
@@ -85,7 +85,7 @@ Requirements:
 	* `NAME`: the name of the executable
 * The `all` rule should recompile only the updated source files
 * You are not allowed to have a list of all the `.o` files
-`
+```
 julien@ubuntu:~/0x1C. Makefiles$ make -f 2-Makefile
 gcc    -c -o main.o main.c
 gcc    -c -o holberton.o holberton.c
@@ -97,7 +97,7 @@ julien@ubuntu:~/0x1C. Makefiles$ make -f 2-Makefile
 gcc    -c -o main.o main.c
 gcc main.o holberton.o -o holberton
 julien@ubuntu:~/0x1C. Makefiles$ 
-`
+```
 
 ### [3. make -f 3-Makefile](./3-Makefile)
 Requirements:
@@ -118,7 +118,7 @@ Requirements:
 * The `all` rule should recompile only the updated source files
 * The `clean`, `oclean`, `fclean`, `re` rules should never fail
 * You are not allowed to have a list of all the `.o` files
-`
+```C
 julien@ubuntu:~/holberton/curriculum_by_julien/holbertonschool-low_level_programming/0x1C. Makefiles$ ls -1
 0-Makefile
 1-Makefile
@@ -165,7 +165,7 @@ gcc    -c -o main.o main.c
 gcc    -c -o holberton.o holberton.c
 gcc main.o holberton.o -o holberton
 julien@ubuntu:~/0x1C. Makefiles$ 
-`
+```
 
 ### [4. A complete Makefile](./4-Makefile)
 Requirements:
@@ -188,13 +188,13 @@ Requirements:
 * The `clean`, `oclean`, `fclean`, `re` rules should never fail
 
 * You are not allowed to have a list of all the `.o` files
-`
+```C
 julien@ubuntu:~/0x1C. Makefiles$ make all -f 4-Makefile
 gcc -Wall -Werror -Wextra -pedantic   -c -o main.o main.c
 gcc -Wall -Werror -Wextra -pedantic   -c -o holberton.o holberton.c
 gcc main.o holberton.o -o holberton
 julien@ubuntu:~/0x1C. Makefiles$ 
-`
+```
 
 ### [5. Island Perimeter](./5-island_perimeter.py)
 __Technical interview preparation:__
@@ -216,7 +216,7 @@ Requirements:
 * First line contains `#!/usr/bin/python3`
 * You are not allowed to import any module
 * Module and function must be documented
-`
+```C
 guillaume@ubuntu:~/0x1C$ cat 5-main.py
 #!/usr/bin/python3
 """
@@ -238,7 +238,7 @@ guillaume@ubuntu:~/0x1C$
 guillaume@ubuntu:~/0x1C$ ./5-main.py
 12
 guillaume@ubuntu:~/0x1C$ 
-`
+```
 
 ### [6. make -f 100-Makefile](./100-Makefile)
 Requirements:
