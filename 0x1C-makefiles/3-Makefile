@@ -5,7 +5,6 @@ NAME = holberton
 RM = rm -f
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-.PHONY: clean
 clean:
 	$(RM) *~ $(NAME)
 oclean:
