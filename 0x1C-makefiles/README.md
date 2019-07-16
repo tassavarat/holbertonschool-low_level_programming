@@ -1,8 +1,6 @@
 # 0x1C. C - Makefiles
 
 ## Learning Objectives
-What you should learn from this project:
-
 * What are `make`, Makefiles
 * When, why and how to use Makefiles
 * What are a rules and how to set and use them
