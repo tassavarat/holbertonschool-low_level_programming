@@ -3,7 +3,7 @@
 /**
  * binary_tree_preorder - Goes through binary tree using pre-ordered traversal
  * @tree: Pointer to root node of tree to traverse
- * @funct: Pointer to function to call for each node
+ * @func: Pointer to function to call for each node
  * Value in node must be passed as a parameter to function
  **/
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
