@@ -69,9 +69,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
+	if (!tree->left && !tree->right)
+		return (1);
 
 	baf = binary_tree_balance(tree);
 	fl = binary_tree_is_full(tree->left);
 	fr = binary_tree_is_full(tree->right);
 	return (!baf && fl && fr);
+
 }
