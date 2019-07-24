@@ -8,14 +8,45 @@
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int height_l;
-	int height_r;
+	const binary_tree_t *current;
+	int hl, hr;
 
-	if (!tree)
-		return (0);
-
-	height_l = tree->left ? 1 + binary_tree_balance(tree->left) : 0;
-	height_r = tree->right ? 1 + binary_tree_balance(tree->right) : 0;
-	/* printf("tree->%d: %d - %d = %d\n", tree->n, height_l, height_r, height_l - height_r); */
-	return (height_l - height_r);
+	hl = hr = 0;
+	if (tree && tree->left)
+	{
+		++hl;
+		current = tree->left;
+		while((current->left || current->right))
+		{
+			if (current->left)
+			{
+				current = current->left;
+				++hl;
+			}
+			else
+			{
+				current = current->right;
+				++hl;
+			}
+		}
+	}
+	if (tree && tree->right)
+	{
+		++hr;
+		current = tree->right;
+		while((current->left || current->right))
+		{
+			if (current->left)
+			{
+				current = current->left;
+				++hr;
+			}
+			else
+			{
+				current = current->right;
+				++hr;
+			}
+		}
+	}
+	return (hl - hr);
 }
