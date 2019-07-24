@@ -5,10 +5,12 @@
  * @tree: Pointer to root node of tree to traverse
  * @func: Pointer to function to call for each node
  * Value in node must be passed as a parameter to function
+ *
+ * Do nothing if tree or func is NULL
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (!tree)
+	if (!tree || !func)
 		return;
 	func(tree->n);
 	binary_tree_preorder(tree->left, func);
