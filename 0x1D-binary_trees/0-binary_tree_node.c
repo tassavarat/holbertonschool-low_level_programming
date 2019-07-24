@@ -6,7 +6,7 @@
  * @value: Value to be stored in new node
  *
  * Return: Pointer to new node, NULL on fail
- **/
+ */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new;

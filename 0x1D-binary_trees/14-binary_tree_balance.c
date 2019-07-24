@@ -5,7 +5,7 @@
  * @tree: Pointer to root of binary tree
  *
  * Return: Balance factor of binary tree
- **/
+ */
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	size_t height_l;
