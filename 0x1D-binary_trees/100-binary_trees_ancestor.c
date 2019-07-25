@@ -41,8 +41,12 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		current_f = current_f->parent;
 		--diff;
 	}
-	if (current_f == current_s)
-		return (current_f);
-	else
-		return (current_f->parent);
+	while (current_f && current_s)
+	{
+		if (current_f == current_s)
+			return (current_f);
+		current_f = current_f->parent;
+		current_s = current_s->parent;
+	}
+	return (NULL);
 }
