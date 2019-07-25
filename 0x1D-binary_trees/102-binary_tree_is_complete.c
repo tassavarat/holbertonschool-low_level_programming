@@ -6,14 +6,16 @@
  * @size: Size of binary tree
  * @index: Counter
  *
- * Return: 1, 0 if NULL or not complete
+ * Return: 1 if complete, otherwise 0
  */
 int complete(const binary_tree_t *tree, int size, int index)
 {
-	if (!tree || size <= index)
+	if (!tree)
+		return (1);
+	if (index >= size)
 		return (0);
-	return (complete(tree->left, 2 * index + 1, size) &&
-			complete(tree->right, 2 * index + 2, size));
+	return (complete(tree->left, size, 2 * index + 1) &&
+			complete(tree->right, size, 2 * index + 2));
 }
 
 /**
@@ -45,7 +47,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		size = _binary_tree_size(tree);
 		index = 0;
 
-		return (complete(tree, index, size));
+		return (complete(tree, size, index));
 	}
 	return (0);
 }
