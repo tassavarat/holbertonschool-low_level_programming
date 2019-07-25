@@ -19,7 +19,15 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	return (height_l > height_r ? height_l : height_r);
 }
 
-void print_level(const binary_tree_t *tree, int level, void (*func)(int))
+/**
+ * visit_level - Visit all nodes of a given level in a binary tree
+ * @tree: Pointer to root of tree
+ * @level: Tree level
+ * @func: Visiting function
+ *
+ * Return: N/A
+ */
+void visit_level(const binary_tree_t *tree, int level, void (*func)(int))
 {
 	if (!tree)
 		return;
@@ -27,18 +35,30 @@ void print_level(const binary_tree_t *tree, int level, void (*func)(int))
 		func(tree->n);
 	else
 	{
-		print_level(tree->left, level - 1, func);
-		print_level(tree->right, level - 1, func);
+		visit_level(tree->left, level - 1, func);
+		visit_level(tree->right, level - 1, func);
 	}
 }
 
+/**
+ * binary_tree_levelorder - Traverse binary tree by level
+ * @tree: Pointer to root of binary tree
+ * @func: Visiting function
+ *
+ * Return: N/A
+ */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	int height = binary_tree_height(tree) + 2;
+	int height;
 	int i;
 
-	for (i = 0; i < height; i++)
+	if (tree && func)
 	{
-		print_level(tree, i, func);
+		height = binary_tree_height(tree) + 2;
+
+		for (i = 0; i < height; i++)
+		{
+			visit_level(tree, i, func);
+		}
 	}
 }
