@@ -27,12 +27,13 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 int check_left_sib(binary_tree_t *right_sib)
 {
 	binary_tree_t *left_sib = binary_tree_sibling(right_sib);
+
 	if (right_sib->left || right_sib->right)
 	{
 		if (left_sib->left && !left_sib->right)
-			return 0;
+			return (0);
 	}
-	return 1;
+	return (1);
 }
 
 /**
