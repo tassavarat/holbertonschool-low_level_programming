@@ -33,9 +33,9 @@ int bst(const binary_tree_t *tree)
  * binary_tree_is_bst - Checks if a binary tree is a valid BST
  * @tree: Pointer to root node of tree to check
  *
- * REturn: 1 if valid BST, 0 if not or NULL
+ * Return: 1 if valid BST, 0 if not or NULL
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	return(tree ? bst(tree) : 0);
+	return (tree ? bst(tree) : 0);
 }
