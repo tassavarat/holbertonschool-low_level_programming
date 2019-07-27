@@ -19,7 +19,7 @@ int lt(bst_t **new, bst_t **current, int value)
 		{
 			(*new) = binary_tree_node(*current, value);
 			if (!*new)
-				return (0);
+				return (3);
 			(*current)->left = *new;
 			return (1);
 		}
@@ -47,7 +47,7 @@ int gt(bst_t **new, bst_t **current, int value)
 		{
 			*new = binary_tree_node(*current, value);
 			if (!*new)
-				return (0);
+				return (3);
 			(*current)->right = *new;
 			return (1);
 		}
@@ -88,12 +88,12 @@ bst_t *bst_insert(bst_t **tree, int value)
 			ret = lt(&new, &current, value);
 			if (ret == 1)
 				break;
-			else if (ret == 2)
+			else if (ret == 2 || ret == 3)
 				return (NULL);
 			ret = gt(&new, &current, value);
 			if (ret == 1)
 				break;
-			else if (ret == 2)
+			else if (ret == 2 || ret == 3)
 				return (NULL);
 		}
 	}
