@@ -70,6 +70,8 @@ bst_t *bst_insert(bst_t **tree, int value)
 	bst_t *new, *current;
 	int i, ret;
 
+	if (!tree)
+		return (NULL);
 	current = NULL;
 	if (!*tree)
 	{
