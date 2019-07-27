@@ -6,7 +6,7 @@
  * @current: Double pointer to pointer to tree
  * @value: to insert
  *
- * Return: 1 on success, 0 on failure, 2 if duplicate found
+ * Return: 1 on success, 0 on failure, 2 if duplicate found, 3 on malloc fail
  */
 int lt(bst_t **new, bst_t **current, int value)
 {
@@ -34,7 +34,7 @@ int lt(bst_t **new, bst_t **current, int value)
  * @current: Double pointer to pointer to tree
  * @value: to insert
  *
- * Return: 1 on success, 0 on failure, 2 if duplicate found
+ * Return: 1 on success, 0 on failure, 2 if duplicate found, 3 on malloc fail
  */
 int gt(bst_t **new, bst_t **current, int value)
 {
@@ -68,7 +68,7 @@ int gt(bst_t **new, bst_t **current, int value)
 bst_t *bst_insert(bst_t **tree, int value)
 {
 	bst_t *new, *current;
-	int i, ret;
+	int ret;
 
 	if (!tree)
 		return (NULL);
@@ -83,7 +83,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 	else
 	{
 		current = *tree;
-		for (i = -2; i; ++i)
+		while (1)
 		{
 			ret = lt(&new, &current, value);
 			if (ret == 1)
