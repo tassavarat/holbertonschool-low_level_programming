@@ -10,6 +10,7 @@
  */
 int bst_h(const binary_tree_t *tree, int min, int max)
 {
+	printf("min: %d\nmax: %d\n", min, max);
 	if (!tree)
 		return (1);
 	if (tree->n < min || tree->n > max)
