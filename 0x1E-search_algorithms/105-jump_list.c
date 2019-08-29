@@ -22,12 +22,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	cur = list;
 	do {
 		tmp = cur;
-		for (i = jump; i > 0; --i)
-		{
-			if (!cur->next)
-				break;
-			cur = cur->next;
-		}
+		for (i = jump; cur->next && i > 0; --i, cur = cur->next)
+			;
 		printf("Value checked at index [%lu] = [%d]\n", cur->index, cur->n);
 		if (!cur->next)
 			break;
@@ -39,6 +35,11 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		printf("Value checked at index [%lu] = [%d]\n", cur->index, cur->n);
 		cur = cur->next;
+		if (cur->n == value)
+		{
+			printf("Value checked at index [%lu] = [%d]\n", cur->index, cur->n);
+			return (cur);
+		}
 		if (!cur->next)
 		{
 			printf("Value checked at index [%lu] = [%d]\n", cur->index, cur->n);
