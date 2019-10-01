@@ -54,7 +54,7 @@
 
 [0x17-dynamic_libraries](./0x17-dynamic_libraries)
 
-[0x18-stacks_queues_lifo_fifo @ a969cfd](./0x18-stacks_queues_lifo_fifo @ a969cfd)
+[0x18-stacks_queues_lifo_fifo](./0x18-stacks_queues_lifo_fifo)
 
 [0x19-hash_tables](./0x19-hash_tables)
 
