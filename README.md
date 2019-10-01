@@ -54,7 +54,7 @@
 
 [0x17-dynamic_libraries](./0x17-dynamic_libraries)
 
-[0x18-stacks_queues_lifo_fifo](./0x18-stacks_queues_lifo_fifo)
+[0x18-stacks_queues_lifo_fifo](https://github.com/tassavarat/monty/tree/a969cfdb53123be3ac5162952b69b7d534da0675)
 
 [0x19-hash_tables](./0x19-hash_tables)
 
